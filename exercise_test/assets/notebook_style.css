@@ -1,0 +1,17 @@
+div.test_pass {
+    background-color: #f2fcf2;
+    border-color: #b5ffb4;
+    border-left: 5px solid #aaeeaa; //#dfb5b4;
+    padding: 0.5em;
+}
+
+div.test_fail {
+    background-color: #fcf2f2;
+    border-color: #dfb5b4;
+    border-left: 5px solid #dfb5b4;
+    padding: 0.5em;
+}
+
+.code_cell:nth-of-type(1) {
+    display: block;
+}
