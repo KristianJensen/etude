@@ -1,7 +1,7 @@
-import exercise_test
+import etude
 
 
-class Exercise1(exercise_test.Exercise):
+class Exercise1(etude.Exercise):
     """
     Define a function that sorts an input list.
     """

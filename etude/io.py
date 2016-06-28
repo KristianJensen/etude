@@ -1,6 +1,6 @@
 from IPython.core.display import display, HTML
-import exercise_test
-from exercise_test.run_exercise_magic import add_magic
+import etude
+from etude.run_exercise_magic import add_magic
 import nbformat.v4 as nbf
 import os
 import importlib
@@ -29,11 +29,12 @@ def initialize(filepath):
     """
     filepath = os.path.abspath(filepath)
 
-    exercise_module, exercises = load_exercise_module(filepath)
+    exercise_module = load_exercise_module(filepath)
+    exercises = exercise_module.exercises
 
     add_magic(exercises)
 
-    css_path = os.path.join(os.path.dirname(exercise_test.__file__), "assets", "notebook_style.css")
+    css_path = os.path.join(os.path.dirname(etude.__file__), "assets", "notebook_style.css")
     display(load_css(css_path))
 
 
@@ -46,15 +47,7 @@ def load_exercise_module(filepath):
         import imp
         exercise_module = imp.load_source("exercise_module", filepath)
 
-    try:
-        exercises = exercise_module.exercises
-    except AttributeError:
-        raise NotImplementedError("For now you must define 'exercises'.")
-        exercises = [
-            obj for obj in exercise_module.globals().values()
-            if isinstance(obj, type) and issubclass(obj, exercise_test.Exercise and obj.name is not None)
-        ]
-    return exercise_module, exercises
+    return exercise_module
 
 
 def load_css(filepath):

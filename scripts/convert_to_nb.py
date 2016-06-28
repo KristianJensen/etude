@@ -1,4 +1,4 @@
-from exercise_test.io import convert_exercise_to_cells, load_exercise_module
+from etude.io import convert_exercise_to_cells, load_exercise_module
 import nbformat.v4 as nbf
 import argparse
 import textwrap
@@ -24,8 +24,8 @@ header_text = "# " + module_name
 cells.append(nbf.new_markdown_cell(header_text))
 
 # Add initialization (magics etc)
-initialization_text = """import exercise_test
-exercise_test.initialize('%s')""" % os.path.abspath(args.filename)
+initialization_text = """import etude
+etude.initialize('%s')""" % os.path.abspath(args.filename)
 
 cells.append(nbf.new_code_cell(initialization_text))
 

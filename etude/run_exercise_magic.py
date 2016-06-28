@@ -2,7 +2,7 @@ from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython import get_ipython
 from IPython.core.display import display
 
-from exercise_test.ui import pass_html, fail_html
+from etude.ui import pass_html, fail_html
 
 
 @magics_class

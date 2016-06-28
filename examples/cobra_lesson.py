@@ -1,4 +1,4 @@
-import exercise_test
+import etude
 import re
 import sys
 
@@ -22,7 +22,7 @@ Go check them out.
 """
 
 
-class Lesson1(exercise_test.Exercise):
+class Lesson1(etude.Exercise):
     """
     So, from [Lecture X, Slides ##-##](Link here), you know that metabolic models come in a range of different formats. You can also remember that there are several places on the web where they can reliably be obtained.
 
