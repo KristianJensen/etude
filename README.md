@@ -1,4 +1,4 @@
-# exercise_test
+# etude
 A coding exercise framework for Python
 
 This package enables simple creation of Jupyter notebook-based interactive coding exercises.<br>
